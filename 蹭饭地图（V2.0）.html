@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9cc975ac3b23ef60ee7fc1793ddacdfc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
+    <script src="https://unpkg.com/@joergdietrich/leaflet.terminator"></script>
+</head>
+<body>
+    
+    
+<style>
+.leaflet-control-search {
+    width: 190px;  /* 自定义搜索框宽度 */
+    height: 35px;  /* 自定义搜索框高度 */
+}
+</style>
+    
+<style>
+.leaflet-control-search .search-input {
+    width: 150px;  /* 自定义输入框宽度 */
+    height: 25px;  /* 自定义输入框高度 */
+}
+</style>
+    
+<style>
+.leaflet-control-search .search-input::placeholder {
+    font-size: 14px;  /* 自定义提示语字体大小 */
+}
+</style>
+    
+            <div class="folium-map" id="map_9cc975ac3b23ef60ee7fc1793ddacdfc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9cc975ac3b23ef60ee7fc1793ddacdfc = L.map(
+                "map_9cc975ac3b23ef60ee7fc1793ddacdfc",
+                {
+                    center: [26.621452390274825, 89.13371583007591],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_921dd3c117fbd3f145834716886b26d3 = L.tileLayer(
+                "https://mt1.google.com/vt/lyrs=m\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "\u003ca href=https://www.google.com/maps\u003e\u8c37\u6b4c\u5730\u56fe\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_921dd3c117fbd3f145834716886b26d3.addTo(map_9cc975ac3b23ef60ee7fc1793ddacdfc);
+        
+    
+            var tile_layer_d72e1a4faaa5770bd9ce1c095f101e30 = L.tileLayer(
+                "https://webrd04.is.autonavi.com/appmaptile?lang=zh_cn\u0026size=1\u0026scale=1\u0026style=7\u0026x={x}\u0026y={y}\u0026z={z}",
+                {"attribution": "\u003ca href=https://ditu.amap.com/\u003e\u9ad8\u5fb7\u5730\u56fe\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d72e1a4faaa5770bd9ce1c095f101e30.addTo(map_9cc975ac3b23ef60ee7fc1793ddacdfc);
+        
+    
+            var marker_cluster_91bdd26bdc706db02fb00ff9dbdab22c = L.markerClusterGroup(
+                {}
+            );
+        
+    
+
+        function geo_json_a215171c634042c63fba54f0855bbb21_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a215171c634042c63fba54f0855bbb21 = L.geoJson(null, {
+                onEachFeature: geo_json_a215171c634042c63fba54f0855bbb21_onEachFeature,
+            
+        });
+
+        function geo_json_a215171c634042c63fba54f0855bbb21_add (data) {
+            geo_json_a215171c634042c63fba54f0855bbb21
+                .addData(data);
+        }
+            geo_json_a215171c634042c63fba54f0855bbb21_add({"bbox": [-113.495216074956, 1.29469707609878, 119.131362, 53.5464620680859], "features": [{"bbox": [113.543372, 22.265635, 113.543372, 22.265635], "geometry": {"coordinates": [113.543372, 22.265635], "type": "Point"}, "id": "0", "properties": {"Contact_info": "19029868386", "Latitude": 22.265635, "Location": "\u5e7f\u4e1c\u7701\u73e0\u6d77\u5e02\u9999\u6d32\u533a", "Longitude": 113.543372, "Name": "\u674e\u6653\u660e"}, "type": "Feature"}, {"bbox": [114.055198, 22.520922, 114.055198, 22.520922], "geometry": {"coordinates": [114.055198, 22.520922], "type": "Point"}, "id": "1", "properties": {"Contact_info": "10105787549", "Latitude": 22.520922, "Location": "\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u798f\u7530\u533a", "Longitude": 114.055198, "Name": "\u5f20\u71d5\u534e"}, "type": "Feature"}, {"bbox": [113.543372, 22.265635, 113.543372, 22.265635], "geometry": {"coordinates": [113.543372, 22.265635], "type": "Point"}, "id": "2", "properties": {"Contact_info": "13065946417", "Latitude": 22.265635, "Location": "\u5e7f\u4e1c\u7701\u73e0\u6d77\u5e02\u9999\u6d32\u533a", "Longitude": 113.543372, "Name": "\u738b\u6d69\u5b87"}, "type": "Feature"}, {"bbox": [116.2977, 39.959893, 116.2977, 39.959893], "geometry": {"coordinates": [116.2977, 39.959893], "type": "Point"}, "id": "3", "properties": {"Contact_info": "10562123652", "Latitude": 39.959893, "Location": "\u5317\u4eac\u5e02\u6d77\u6dc0\u533a", "Longitude": 116.2977, "Name": "\u8d75\u96c5\u5a77"}, "type": "Feature"}, {"bbox": [113.930478, 22.533191, 113.930478, 22.533191], "geometry": {"coordinates": [113.930478, 22.533191], "type": "Point"}, "id": "4", "properties": {"Contact_info": "13299529358", "Latitude": 22.533191, "Location": "\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u5357\u5c71\u533a", "Longitude": 113.930478, "Name": "\u5218\u5b50\u8c6a"}, "type": "Feature"}, {"bbox": [113.361597, 23.124817, 113.361597, 23.124817], "geometry": {"coordinates": [113.361597, 23.124817], "type": "Point"}, "id": "5", "properties": {"Contact_info": "11038560556", "Latitude": 23.124817, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u5929\u6cb3\u533a", "Longitude": 113.361597, "Name": "\u5b59\u4f73\u742a"}, "type": "Feature"}, {"bbox": [113.267065, 23.128673, 113.267065, 23.128673], "geometry": {"coordinates": [113.267065, 23.128673], "type": "Point"}, "id": "6", "properties": {"Contact_info": "12802418451", "Latitude": 23.128673, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u8d8a\u79c0\u533a", "Longitude": 113.267065, "Name": "\u90ed\u5a5e\u6021"}, "type": "Feature"}, {"bbox": [118.769943, 32.066814, 118.769943, 32.066814], "geometry": {"coordinates": [118.769943, 32.066814], "type": "Point"}, "id": "7", "properties": {"Contact_info": "14523322992", "Latitude": 32.066814, "Location": "\u6c5f\u82cf\u7701\u5357\u4eac\u5e02\u9f13\u697c\u533a", "Longitude": 118.769943, "Name": "\u9648\u5fd7\u5f3a"}, "type": "Feature"}, {"bbox": [103.854482317814, 1.29469707609878, 103.854482317814, 1.29469707609878], "geometry": {"coordinates": [103.854482317814, 1.29469707609878], "type": "Point"}, "id": "8", "properties": {"Contact_info": "321457820@qq.com", "Latitude": 1.29469707609878, "Location": "Singapore", "Longitude": 103.854482317814, "Name": "\u5434\u6625\u6885"}, "type": "Feature"}, {"bbox": [103.900486, 30.795113, 103.900486, 30.795113], "geometry": {"coordinates": [103.900486, 30.795113], "type": "Point"}, "id": "9", "properties": {"Contact_info": "16366665244", "Latitude": 30.795113, "Location": "\u56db\u5ddd\u7701\u6210\u90fd\u5e02\u90eb\u90fd\u533a", "Longitude": 103.900486, "Name": "\u5468\u745e\u96ea"}, "type": "Feature"}, {"bbox": [113.543372, 22.265635, 113.543372, 22.265635], "geometry": {"coordinates": [113.543372, 22.265635], "type": "Point"}, "id": "10", "properties": {"Contact_info": "16968794851", "Latitude": 22.265635, "Location": "\u5e7f\u4e1c\u7701\u73e0\u6d77\u5e02\u9999\u6d32\u533a", "Longitude": 113.543372, "Name": "\u5f90\u6668\u66e6"}, "type": "Feature"}, {"bbox": [113.751884, 23.021016, 113.751884, 23.021016], "geometry": {"coordinates": [113.751884, 23.021016], "type": "Point"}, "id": "11", "properties": {"Contact_info": "14296099310", "Latitude": 23.021016, "Location": "\u5e7f\u4e1c\u7701\u4e1c\u839e\u5e02", "Longitude": 113.751884, "Name": "\u9ec4\u79cb\u71d5"}, "type": "Feature"}, {"bbox": [108.940681, 34.256727, 108.940681, 34.256727], "geometry": {"coordinates": [108.940681, 34.256727], "type": "Point"}, "id": "12", "properties": {"Contact_info": "15722038099", "Latitude": 34.256727, "Location": "\u9655\u897f\u7701\u897f\u5b89\u5e02\u7891\u6797\u533a", "Longitude": 108.940681, "Name": "\u66f9\u6587\u535a"}, "type": "Feature"}, {"bbox": [113.383917, 22.93756, 113.383917, 22.93756], "geometry": {"coordinates": [113.383917, 22.93756], "type": "Point"}, "id": "13", "properties": {"Contact_info": "15350376238", "Latitude": 22.93756, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u756a\u79ba\u533a", "Longitude": 113.383917, "Name": "\u8521\u8273\u7ea2"}, "type": "Feature"}, {"bbox": [113.317412, 23.084003, 113.317412, 23.084003], "geometry": {"coordinates": [113.317412, 23.084003], "type": "Point"}, "id": "14", "properties": {"Contact_info": "17672664045", "Latitude": 23.084003, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u6d77\u73e0\u533a", "Longitude": 113.317412, "Name": "\u9a6c\u5929\u5b87"}, "type": "Feature"}, {"bbox": [113.361597, 23.124817, 113.361597, 23.124817], "geometry": {"coordinates": [113.361597, 23.124817], "type": "Point"}, "id": "15", "properties": {"Contact_info": "13603658029", "Latitude": 23.124817, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u5929\u6cb3\u533a", "Longitude": 113.361597, "Name": "\u8463\u4e3d\u4e3d"}, "type": "Feature"}, {"bbox": [114.246884, 22.720889, 114.246884, 22.720889], "geometry": {"coordinates": [114.246884, 22.720889], "type": "Point"}, "id": "16", "properties": {"Contact_info": "153724563@qq.com", "Latitude": 22.720889, "Location": "\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u9f99\u5c97\u533a", "Longitude": 114.246884, "Name": "\u94b1\u6d77\u6d9b"}, "type": "Feature"}, {"bbox": [113.317412, 23.084003, 113.317412, 23.084003], "geometry": {"coordinates": [113.317412, 23.084003], "type": "Point"}, "id": "17", "properties": {"Contact_info": "10900677584", "Latitude": 23.084003, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u6d77\u73e0\u533a", "Longitude": 113.317412, "Name": "\u90d1\u79c0\u6587"}, "type": "Feature"}, {"bbox": [113.936059, 22.74875, 113.936059, 22.74875], "geometry": {"coordinates": [113.936059, 22.74875], "type": "Point"}, "id": "18", "properties": {"Contact_info": "14481131347", "Latitude": 22.74875, "Location": "\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u5149\u660e\u533a", "Longitude": 113.936059, "Name": "\u51af\u601d\u6e90"}, "type": "Feature"}, {"bbox": [113.317412, 23.084003, 113.317412, 23.084003], "geometry": {"coordinates": [113.317412, 23.084003], "type": "Point"}, "id": "19", "properties": {"Contact_info": "18286666830", "Latitude": 23.084003, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u6d77\u73e0\u533a", "Longitude": 113.317412, "Name": "\u8c22\u5b97\u7ff0"}, "type": "Feature"}, {"bbox": [113.525178, 22.801435, 113.525178, 22.801435], "geometry": {"coordinates": [113.525178, 22.801435], "type": "Point"}, "id": "20", "properties": {"Contact_info": "10689773199", "Latitude": 22.801435, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u5357\u6c99\u533a", "Longitude": 113.525178, "Name": "\u675c\u9e43\u82b1"}, "type": "Feature"}, {"bbox": [110.918566, 21.641661, 110.918566, 21.641661], "geometry": {"coordinates": [110.918566, 21.641661], "type": "Point"}, "id": "21", "properties": {"Contact_info": "14781057575", "Latitude": 21.641661, "Location": "\u5e7f\u4e1c\u7701\u8302\u540d\u5e02\u8302\u5357\u533a", "Longitude": 110.918566, "Name": "\u6f58\u60a6\u5fc3"}, "type": "Feature"}, {"bbox": [-76.5932782847462, 39.299728236557, -76.5932782847462, 39.299728236557], "geometry": {"coordinates": [-76.5932782847462, 39.299728236557], "type": "Point"}, "id": "22", "properties": {"Contact_info": "yulir01210@gmail.com", "Latitude": 39.299728236557, "Location": "Baltimore,Maryland,US", "Longitude": -76.5932782847462, "Name": "\u6731\u5fd7\u8c6a"}, "type": "Feature"}, {"bbox": [111.535387, 23.234561, 111.535387, 23.234561], "geometry": {"coordinates": [111.535387, 23.234561], "type": "Point"}, "id": "23", "properties": {"Contact_info": "13826725734", "Latitude": 23.234561, "Location": "\u5e7f\u4e1c\u7701\u4e91\u6d6e\u5e02\u90c1\u5357\u53bf", "Longitude": 111.535387, "Name": "\u8d56\u51a0\u9716"}, "type": "Feature"}, {"bbox": [113.317412, 23.084003, 113.317412, 23.084003], "geometry": {"coordinates": [113.317412, 23.084003], "type": "Point"}, "id": "24", "properties": {"Contact_info": "18998304160", "Latitude": 23.084003, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u6d77\u73e0\u533a", "Longitude": 113.317412, "Name": "\u9093\u7d2b\u68cb"}, "type": "Feature"}, {"bbox": [-76.5932782847462, 39.299728236557, -76.5932782847462, 39.299728236557], "geometry": {"coordinates": [-76.5932782847462, 39.299728236557], "type": "Point"}, "id": "25", "properties": {"Contact_info": "13602432750", "Latitude": 39.299728236557, "Location": "Baltimore,Maryland,US", "Longitude": -76.5932782847462, "Name": "\u6c5f\u4e00\u9e23"}, "type": "Feature"}, {"bbox": [-79.0469674925767, 35.9068704608673, -79.0469674925767, 35.9068704608673], "geometry": {"coordinates": [-79.0469674925767, 35.9068704608673], "type": "Point"}, "id": "26", "properties": {"Contact_info": "fanlin@unc.edu", "Latitude": 35.9068704608673, "Location": "Carrboro,North Carolina,US", "Longitude": -79.0469674925767, "Name": "\u5b59\u4fea\u7476"}, "type": "Feature"}, {"bbox": [110.853169, 21.918017, 110.853169, 21.918017], "geometry": {"coordinates": [110.853169, 21.918017], "type": "Point"}, "id": "27", "properties": {"Contact_info": "11927526055", "Latitude": 21.918017, "Location": "\u5e7f\u4e1c\u7701\u8302\u540d\u5e02\u9ad8\u5dde\u5e02", "Longitude": 110.853169, "Name": "\u9ad8\u7fd4\u5b87"}, "type": "Feature"}, {"bbox": [113.383917, 22.93756, 113.383917, 22.93756], "geometry": {"coordinates": [113.383917, 22.93756], "type": "Point"}, "id": "28", "properties": {"Contact_info": "12097512750", "Latitude": 22.93756, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u756a\u79ba\u533a", "Longitude": 113.383917, "Name": "\u5b8b\u96e8\u6db5"}, "type": "Feature"}, {"bbox": [114.246884, 22.720889, 114.246884, 22.720889], "geometry": {"coordinates": [114.246884, 22.720889], "type": "Point"}, "id": "29", "properties": {"Contact_info": "10453414532", "Latitude": 22.720889, "Location": "\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u9f99\u5c97\u533a", "Longitude": 114.246884, "Name": "\u97e9\u7b11\u7136"}, "type": "Feature"}, {"bbox": [103.92342, 30.574884, 103.92342, 30.574884], "geometry": {"coordinates": [103.92342, 30.574884], "type": "Point"}, "id": "30", "properties": {"Contact_info": "6469273956@qq.com", "Latitude": 30.574884, "Location": "\u56db\u5ddd\u7701\u6210\u90fd\u5e02\u53cc\u6d41\u533a", "Longitude": 103.92342, "Name": "\u80e1\u6653\u4e1c"}, "type": "Feature"}, {"bbox": [119.131362, 26.150428, 119.131362, 26.150428], "geometry": {"coordinates": [119.131362, 26.150428], "type": "Point"}, "id": "31", "properties": {"Contact_info": "16766842756", "Latitude": 26.150428, "Location": "\u798f\u5efa\u7701\u798f\u5dde\u5e02\u95fd\u4faf\u53bf", "Longitude": 119.131362, "Name": "\u5362\u6653\u971e"}, "type": "Feature"}, {"bbox": [114.264645, 22.314213, 114.264645, 22.314213], "geometry": {"coordinates": [114.264645, 22.314213], "type": "Point"}, "id": "32", "properties": {"Contact_info": "11819669085", "Latitude": 22.314213, "Location": "\u9999\u6e2f\u7279\u522b\u884c\u653f\u533a\u897f\u8d21\u533a", "Longitude": 114.264645, "Name": "\u7fc1\u8bd7\u742a"}, "type": "Feature"}, {"bbox": [-88.2272383349741, 40.102519323486, -88.2272383349741, 40.102519323486], "geometry": {"coordinates": [-88.2272383349741, 40.102519323486], "type": "Point"}, "id": "33", "properties": {"Contact_info": "dengnanl@illinois.edu", "Latitude": 40.102519323486, "Location": "Champaign,Illinois,US", "Longitude": -88.2272383349741, "Name": "\u4f55\u5efa\u52c7"}, "type": "Feature"}, {"bbox": [-0.142403621102771, 51.5026192667856, -0.142403621102771, 51.5026192667856], "geometry": {"coordinates": [-0.142403621102771, 51.5026192667856], "type": "Point"}, "id": "34", "properties": {"Contact_info": "fanyuxuan2022sd@163.com", "Latitude": 51.5026192667856, "Location": "United Kingdom", "Longitude": -0.142403621102771, "Name": "\u77f3\u60a6\u5f64"}, "type": "Feature"}, {"bbox": [113.383917, 22.93756, 113.383917, 22.93756], "geometry": {"coordinates": [113.383917, 22.93756], "type": "Point"}, "id": "35", "properties": {"Contact_info": "18171860879", "Latitude": 22.93756, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u756a\u79ba\u533a", "Longitude": 113.383917, "Name": "\u9b4f\u6653\u5cf0"}, "type": "Feature"}, {"bbox": [114.320884, 30.37558, 114.320884, 30.37558], "geometry": {"coordinates": [114.320884, 30.37558], "type": "Point"}, "id": "36", "properties": {"Contact_info": "10836193745", "Latitude": 30.37558, "Location": "\u6e56\u5317\u7701\u6b66\u6c49\u5e02\u6c5f\u590f\u533a", "Longitude": 114.320884, "Name": "\u4fb4\u6b23\u6021"}, "type": "Feature"}, {"bbox": [113.930478, 22.533191, 113.930478, 22.533191], "geometry": {"coordinates": [113.930478, 22.533191], "type": "Point"}, "id": "37", "properties": {"Contact_info": "10997466403", "Latitude": 22.533191, "Location": "\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u5357\u5c71\u533a", "Longitude": 113.930478, "Name": "\u6768\u67f3\u9752"}, "type": "Feature"}, {"bbox": [113.361597, 23.124817, 113.361597, 23.124817], "geometry": {"coordinates": [113.361597, 23.124817], "type": "Point"}, "id": "38", "properties": {"Contact_info": "11620800519", "Latitude": 23.124817, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u5929\u6cb3\u533a", "Longitude": 113.361597, "Name": "\u5510\u5a49\u5a77"}, "type": "Feature"}, {"bbox": [-83.7253305705367, 42.2824577966778, -83.7253305705367, 42.2824577966778], "geometry": {"coordinates": [-83.7253305705367, 42.2824577966778], "type": "Point"}, "id": "39", "properties": {"Contact_info": "ty2456432@163.com", "Latitude": 42.2824577966778, "Location": "Ann Arbor,Michigan,US", "Longitude": -83.7253305705367, "Name": "\u7ae0\u747e\u745c"}, "type": "Feature"}, {"bbox": [-113.495216074956, 53.5464620680859, -113.495216074956, 53.5464620680859], "geometry": {"coordinates": [-113.495216074956, 53.5464620680859], "type": "Point"}, "id": "40", "properties": {"Contact_info": "13498537146", "Latitude": 53.5464620680859, "Location": "Edmonton,Alberta,Canada", "Longitude": -113.495216074956, "Name": "\u96f7\u4e91\u98de"}, "type": "Feature"}, {"bbox": [108.906944, 34.158668, 108.906944, 34.158668], "geometry": {"coordinates": [108.906944, 34.158668], "type": "Point"}, "id": "41", "properties": {"Contact_info": "11389827346", "Latitude": 34.158668, "Location": "\u9655\u897f\u7701\u897f\u5b89\u5e02\u957f\u5b89\u533a", "Longitude": 108.906944, "Name": "\u8303\u51b0\u51b0"}, "type": "Feature"}, {"bbox": [113.383917, 22.93756, 113.383917, 22.93756], "geometry": {"coordinates": [113.383917, 22.93756], "type": "Point"}, "id": "42", "properties": {"Contact_info": "16006880829", "Latitude": 22.93756, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u756a\u79ba\u533a", "Longitude": 113.383917, "Name": "\u6797\u632f\u534e"}, "type": "Feature"}, {"bbox": [112.930116, 28.234202, 112.930116, 28.234202], "geometry": {"coordinates": [112.930116, 28.234202], "type": "Point"}, "id": "43", "properties": {"Contact_info": "17185550430", "Latitude": 28.234202, "Location": "\u6e56\u5357\u7701\u957f\u6c99\u5e02\u5cb3\u9e93\u533a", "Longitude": 112.930116, "Name": "\u6bb5\u535a\u6587"}, "type": "Feature"}, {"bbox": [113.317412, 23.084003, 113.317412, 23.084003], "geometry": {"coordinates": [113.317412, 23.084003], "type": "Point"}, "id": "44", "properties": {"Contact_info": "19513885912", "Latitude": 23.084003, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u6d77\u73e0\u533a", "Longitude": 113.317412, "Name": "\u90ed\u5c0f\u5ddd"}, "type": "Feature"}, {"bbox": [114.350844, 22.708786, 114.350844, 22.708786], "geometry": {"coordinates": [114.350844, 22.708786], "type": "Point"}, "id": "45", "properties": {"Contact_info": "13705609354", "Latitude": 22.708786, "Location": "\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u576a\u5c71\u533a", "Longitude": 114.350844, "Name": "\u8d3e\u68a6\u742a"}, "type": "Feature"}, {"bbox": [114.04491, 22.696735, 114.04491, 22.696735], "geometry": {"coordinates": [114.04491, 22.696735], "type": "Point"}, "id": "46", "properties": {"Contact_info": "10888884415", "Latitude": 22.696735, "Location": "\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u9f99\u534e\u533a", "Longitude": 114.04491, "Name": "\u4ed8\u5927\u4f1f"}, "type": "Feature"}, {"bbox": [113.317412, 23.084003, 113.317412, 23.084003], "geometry": {"coordinates": [113.317412, 23.084003], "type": "Point"}, "id": "47", "properties": {"Contact_info": "19492744776", "Latitude": 23.084003, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u6d77\u73e0\u533a", "Longitude": 113.317412, "Name": "\u738b\u6893\u8f69"}, "type": "Feature"}, {"bbox": [113.361597, 23.124817, 113.361597, 23.124817], "geometry": {"coordinates": [113.361597, 23.124817], "type": "Point"}, "id": "48", "properties": {"Contact_info": "12556679198", "Latitude": 23.124817, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u5929\u6cb3\u533a", "Longitude": 113.361597, "Name": "\u8c22\u9759\u6021"}, "type": "Feature"}, {"bbox": [113.361597, 23.124817, 113.361597, 23.124817], "geometry": {"coordinates": [113.361597, 23.124817], "type": "Point"}, "id": "49", "properties": {"Contact_info": "17737112691", "Latitude": 23.124817, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u5929\u6cb3\u533a", "Longitude": 113.361597, "Name": "\u674e\u6b23\u60a6"}, "type": "Feature"}, {"bbox": [111.013368, 21.513946, 111.013368, 21.513946], "geometry": {"coordinates": [111.013368, 21.513946], "type": "Point"}, "id": "50", "properties": {"Contact_info": "15756907503", "Latitude": 21.513946, "Location": "\u5e7f\u4e1c\u7701\u8302\u540d\u5e02\u7535\u767d\u533a", "Longitude": 111.013368, "Name": "\u5218\u5b87\u822a"}, "type": "Feature"}, {"bbox": [117.310133, 31.793801, 117.310133, 31.793801], "geometry": {"coordinates": [117.310133, 31.793801], "type": "Point"}, "id": "51", "properties": {"Contact_info": "11259363684", "Latitude": 31.793801, "Location": "\u5b89\u5fbd\u7701\u5408\u80a5\u5e02\u5305\u6cb3\u533a", "Longitude": 117.310133, "Name": "\u4e8e\u6653\u66fc"}, "type": "Feature"}, {"bbox": [113.383917, 22.93756, 113.383917, 22.93756], "geometry": {"coordinates": [113.383917, 22.93756], "type": "Point"}, "id": "52", "properties": {"Contact_info": "16712188498", "Latitude": 22.93756, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u756a\u79ba\u533a", "Longitude": 113.383917, "Name": "\u8d75\u4e39\u9633"}, "type": "Feature"}, {"bbox": [112.485577, 23.051847, 112.485577, 23.051847], "geometry": {"coordinates": [112.485577, 23.051847], "type": "Point"}, "id": "53", "properties": {"Contact_info": "16281562339", "Latitude": 23.051847, "Location": "\u5e7f\u4e1c\u7701\u8087\u5e86\u5e02\u7aef\u5dde\u533a", "Longitude": 112.485577, "Name": "\u9648\u7389\u6d01"}, "type": "Feature"}, {"bbox": [113.2732, 23.157159, 113.2732, 23.157159], "geometry": {"coordinates": [113.2732, 23.157159], "type": "Point"}, "id": "54", "properties": {"Contact_info": "2483058560@qq.com", "Latitude": 23.157159, "Location": "\u5e7f\u4e1c\u7701\u5e7f\u5dde\u5e02\u767d\u4e91\u533a", "Longitude": 113.2732, "Name": "\u90b9\u661f\u8fb0"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_a215171c634042c63fba54f0855bbb21.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "Location", "Contact_info"];
+    let aliases = ["\u59d3\u540d", "\u4f4d\u7f6e", "\u8054\u7cfb\u65b9\u5f0f"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_a215171c634042c63fba54f0855bbb21.addTo(marker_cluster_91bdd26bdc706db02fb00ff9dbdab22c);
+        
+    
+            marker_cluster_91bdd26bdc706db02fb00ff9dbdab22c.addTo(map_9cc975ac3b23ef60ee7fc1793ddacdfc);
+        
+    
+            var layer_control_0a72978b6f12c57b6257f9ab339633d0_layers = {
+                base_layers : {
+                    "\u8c37\u6b4c\u5730\u56fe" : tile_layer_921dd3c117fbd3f145834716886b26d3,
+                    "\u9ad8\u5fb7\u5730\u56fe" : tile_layer_d72e1a4faaa5770bd9ce1c095f101e30,
+                },
+                overlays :  {
+                    "\u540c\u5b66\u4fe1\u606f" : marker_cluster_91bdd26bdc706db02fb00ff9dbdab22c,
+                },
+            };
+            let layer_control_0a72978b6f12c57b6257f9ab339633d0 = L.control.layers(
+                layer_control_0a72978b6f12c57b6257f9ab339633d0_layers.base_layers,
+                layer_control_0a72978b6f12c57b6257f9ab339633d0_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_9cc975ac3b23ef60ee7fc1793ddacdfc);
+
+        
+    
+            var geo_json_a215171c634042c63fba54f0855bbb21searchControl = new L.Control.Search({
+                layer: geo_json_a215171c634042c63fba54f0855bbb21,
+                
+                propertyName: 'Name',
+                
+                collapsed: false,
+                textPlaceholder: '输入姓名搜索',
+                position:'topleft',
+            
+                initial: false,
+                
+                zoom: 15,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_a215171c634042c63fba54f0855bbb21searchControl.on('search:locationfound', function(e) {
+                    geo_json_a215171c634042c63fba54f0855bbb21.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    e.layer.setStyle({"weight": 8});
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_a215171c634042c63fba54f0855bbb21searchControl.on('search:collapsed', function(e) {
+                        geo_json_a215171c634042c63fba54f0855bbb21.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_9cc975ac3b23ef60ee7fc1793ddacdfc.addControl( geo_json_a215171c634042c63fba54f0855bbb21searchControl );
+
+        
+    
+            map_9cc975ac3b23ef60ee7fc1793ddacdfc.fitBounds(
+                [[1.29469707609878, -113.495216074956], [53.5464620680859, 119.131362]],
+                {}
+            );
+        
+    
+            var mouse_position_82318eab850f2c75519aa54259f684c2 = new L.Control.MousePosition(
+                {"emptyString": "NaN", "lngFirst": true, "numDigits": 20, "position": "topright", "prefix": "\u7ecf\u7eac\u5ea6:", "separator": " , "}
+            );
+            mouse_position_82318eab850f2c75519aa54259f684c2.options["latFormatter"] =
+                function(num) {return L.Util.formatNum(num, 3) + ' &deg; ';};;
+            mouse_position_82318eab850f2c75519aa54259f684c2.options["lngFormatter"] =
+                function(num) {return L.Util.formatNum(num, 3) + ' &deg; ';};;
+            map_9cc975ac3b23ef60ee7fc1793ddacdfc.addControl(mouse_position_82318eab850f2c75519aa54259f684c2);
+        
+    
+            var locate_control_0a690a49acf971d47b235114b5c85889 = L.control.locate(
+                {"strings": {"title": "\u70b9\u51fb\u4ee5\u83b7\u53d6\u5f53\u524d\u4f4d\u7f6e"}}
+            ).addTo(map_9cc975ac3b23ef60ee7fc1793ddacdfc);
+            
+        
+    
+            L.terminator().addTo(map_9cc975ac3b23ef60ee7fc1793ddacdfc);
+        
+</script>
+</html>
